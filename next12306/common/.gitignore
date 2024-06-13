@@ -1,3 +1,7 @@
+
+#关于git说明：如果出现Git报错：Github port 443 : Timed out解决方法总结
+#进入cd ~/.ssh，删除rm -rf ./id_rsa和rm -rf ./id_rsa.pub
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar

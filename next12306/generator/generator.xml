@@ -14,16 +14,16 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.next.model" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
+		<javaModelGenerator targetPackage="com.next.common.model" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.next.orderMappers" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
+		<sqlMapGenerator targetPackage="com.next.common.orderMappers" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.next.orderDao" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.next.common.orderDao" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->

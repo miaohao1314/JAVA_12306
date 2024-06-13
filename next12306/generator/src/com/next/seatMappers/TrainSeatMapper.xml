@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.next.seatDao.TrainSeatMapper" >
+  <resultMap id="BaseResultMap" type="com.next.model.TrainSeat" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="ticket" property="ticket" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="traveller_id" property="travellerId" jdbcType="BIGINT" />
+    <result column="train_number_id" property="trainNumberId" jdbcType="INTEGER" />
+    <result column="carriage_number" property="carriageNumber" jdbcType="INTEGER" />
+    <result column="row_number" property="rowNumber" jdbcType="INTEGER" />
+    <result column="seat_number" property="seatNumber" jdbcType="INTEGER" />
+    <result column="seat_level" property="seatLevel" jdbcType="INTEGER" />
+    <result column="train_start" property="trainStart" jdbcType="TIMESTAMP" />
+    <result column="train_end" property="trainEnd" jdbcType="TIMESTAMP" />
+    <result column="money" property="money" jdbcType="INTEGER" />
+    <result column="show_number" property="showNumber" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="from_station_id" property="fromStationId" jdbcType="INTEGER" />
+    <result column="to_station_id" property="toStationId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ticket, user_id, traveller_id, train_number_id, carriage_number, row_number, 
+    seat_number, seat_level, train_start, train_end, money, show_number, status, from_station_id, 
+    to_station_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from train_seat
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from train_seat
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.next.model.TrainSeat" >
+    insert into train_seat (id, ticket, user_id, 
+      traveller_id, train_number_id, carriage_number, 
+      row_number, seat_number, seat_level, 
+      train_start, train_end, money, 
+      show_number, status, from_station_id, 
+      to_station_id)
+    values (#{id,jdbcType=BIGINT}, #{ticket,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
+      #{travellerId,jdbcType=BIGINT}, #{trainNumberId,jdbcType=INTEGER}, #{carriageNumber,jdbcType=INTEGER}, 
+      #{rowNumber,jdbcType=INTEGER}, #{seatNumber,jdbcType=INTEGER}, #{seatLevel,jdbcType=INTEGER}, 
+      #{trainStart,jdbcType=TIMESTAMP}, #{trainEnd,jdbcType=TIMESTAMP}, #{money,jdbcType=INTEGER}, 
+      #{showNumber,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{fromStationId,jdbcType=INTEGER}, 
+      #{toStationId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.next.model.TrainSeat" >
+    insert into train_seat
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ticket != null" >
+        ticket,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="travellerId != null" >
+        traveller_id,
+      </if>
+      <if test="trainNumberId != null" >
+        train_number_id,
+      </if>
+      <if test="carriageNumber != null" >
+        carriage_number,
+      </if>
+      <if test="rowNumber != null" >
+        row_number,
+      </if>
+      <if test="seatNumber != null" >
+        seat_number,
+      </if>
+      <if test="seatLevel != null" >
+        seat_level,
+      </if>
+      <if test="trainStart != null" >
+        train_start,
+      </if>
+      <if test="trainEnd != null" >
+        train_end,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="showNumber != null" >
+        show_number,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="fromStationId != null" >
+        from_station_id,
+      </if>
+      <if test="toStationId != null" >
+        to_station_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="ticket != null" >
+        #{ticket,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="travellerId != null" >
+        #{travellerId,jdbcType=BIGINT},
+      </if>
+      <if test="trainNumberId != null" >
+        #{trainNumberId,jdbcType=INTEGER},
+      </if>
+      <if test="carriageNumber != null" >
+        #{carriageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="rowNumber != null" >
+        #{rowNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seatNumber != null" >
+        #{seatNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seatLevel != null" >
+        #{seatLevel,jdbcType=INTEGER},
+      </if>
+      <if test="trainStart != null" >
+        #{trainStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trainEnd != null" >
+        #{trainEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=INTEGER},
+      </if>
+      <if test="showNumber != null" >
+        #{showNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="fromStationId != null" >
+        #{fromStationId,jdbcType=INTEGER},
+      </if>
+      <if test="toStationId != null" >
+        #{toStationId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.next.model.TrainSeat" >
+    update train_seat
+    <set >
+      <if test="ticket != null" >
+        ticket = #{ticket,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="travellerId != null" >
+        traveller_id = #{travellerId,jdbcType=BIGINT},
+      </if>
+      <if test="trainNumberId != null" >
+        train_number_id = #{trainNumberId,jdbcType=INTEGER},
+      </if>
+      <if test="carriageNumber != null" >
+        carriage_number = #{carriageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="rowNumber != null" >
+        row_number = #{rowNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seatNumber != null" >
+        seat_number = #{seatNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seatLevel != null" >
+        seat_level = #{seatLevel,jdbcType=INTEGER},
+      </if>
+      <if test="trainStart != null" >
+        train_start = #{trainStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trainEnd != null" >
+        train_end = #{trainEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=INTEGER},
+      </if>
+      <if test="showNumber != null" >
+        show_number = #{showNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="fromStationId != null" >
+        from_station_id = #{fromStationId,jdbcType=INTEGER},
+      </if>
+      <if test="toStationId != null" >
+        to_station_id = #{toStationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.next.model.TrainSeat" >
+    update train_seat
+    set ticket = #{ticket,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      traveller_id = #{travellerId,jdbcType=BIGINT},
+      train_number_id = #{trainNumberId,jdbcType=INTEGER},
+      carriage_number = #{carriageNumber,jdbcType=INTEGER},
+      row_number = #{rowNumber,jdbcType=INTEGER},
+      seat_number = #{seatNumber,jdbcType=INTEGER},
+      seat_level = #{seatLevel,jdbcType=INTEGER},
+      train_start = #{trainStart,jdbcType=TIMESTAMP},
+      train_end = #{trainEnd,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=INTEGER},
+      show_number = #{showNumber,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      from_station_id = #{fromStationId,jdbcType=INTEGER},
+      to_station_id = #{toStationId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

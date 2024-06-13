@@ -1,7 +1,36 @@
 package com.next.common.model;
 
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Date;
 
+/**
+ * 使用以下注解可以省略get和set方法,可以用Data替代这三个
+ * @Getter
+ * @Setter
+ *@ToString
+ *
+ * 使用@Builder设计模式
+ *
+ * 无参数构造函数
+ * 有参数构造函数
+ * @NoArgsConstructor
+ * @AllArgsConstructor
+ *
+ * 定义日志实例
+ * @Slf4j
+ */
+
+//@Getter
+//@Setter
+//@ToString
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@Slf4j
 public class SysUser {
     private Integer id;
 
@@ -25,91 +54,17 @@ public class SysUser {
 
     private String operateIp;
 
-    public Integer getId() {
-        return id;
-    }
+//    使用@Builder设计模式
+//public static void main(String[] args) {
+//    //具体赋值通过builder去构造一个实例出来
+//    SysUser.builder().deptId().id().build();
+//}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public String getUsername() {
-        return username;
-    }
+//    定义日志实例@Slf4j
+//public static void main(String[] args) {
+//    log.info("");
+//}
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone == null ? null : telephone.trim();
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail == null ? null : mail.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Integer getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId(Integer deptId) {
-        this.deptId = deptId;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public String getOperator() {
-        return operator;
-    }
-
-    public void setOperator(String operator) {
-        this.operator = operator == null ? null : operator.trim();
-    }
-
-    public Date getOperateTime() {
-        return operateTime;
-    }
-
-    public void setOperateTime(Date operateTime) {
-        this.operateTime = operateTime;
-    }
-
-    public String getOperateIp() {
-        return operateIp;
-    }
-
-    public void setOperateIp(String operateIp) {
-        this.operateIp = operateIp == null ? null : operateIp.trim();
-    }
 }

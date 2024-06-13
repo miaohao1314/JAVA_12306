@@ -8,7 +8,7 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<!-- 数据库链接URL、用户名、密码 -->
-		 <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/t_train_order?characterEncoding=utf8" userId="root" password="root">
+		 <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/test1?characterEncoding=utf8" userId="root" password="root">
 		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
@@ -19,15 +19,15 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.next.common.orderMappers" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
+		<sqlMapGenerator targetPackage="com.next.common.mappers" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.next.common.orderDao" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.next.common.dao" targetProject="D:\java_12306\JAVA_12306\next12306\generator\src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-<!--		<table tableName="sys_user" domainObjectName="SysUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+		<table tableName="sys_user" domainObjectName="SysUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 
 		<!--生成test1中的基础表-->
 <!--		<table tableName="train_city" domainObjectName="TrainCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
@@ -40,8 +40,8 @@
 
 <!--		<table tableName="train_seat" domainObjectName="TrainSeat" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
 
-		<table tableName="train_order" domainObjectName="TrainOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-		<table tableName="train_order_detail" domainObjectName="TrainOrderDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+<!--		<table tableName="train_order" domainObjectName="TrainOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="train_order_detail" domainObjectName="TrainOrderDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
 
 	</context>
 </generatorConfiguration>
